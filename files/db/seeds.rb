@@ -1,15 +1,26 @@
-require_relative('../models/user')
 require_relative('../models/transaction')
+require_relative('../models/user')
 require_relative('../models/tag')
 
 require('pry-byebug')
 
-User.delete_all()
 Transaction.delete_all()
+User.delete_all()
 Tag.delete_all()
 
 user1 = User.new({ 'name' => 'Ella Ferguson', 'budget' => 750 })
 user1.save()
+
+tag1 = Tag.new({ 'name' => 'transport' })
+tag2 = Tag.new({ 'name' => 'eating_out' })
+tag3 = Tag.new({ 'name' => 'clothes' })
+tag4 = Tag.new({ 'name' => 'groceries' })
+tag5 = Tag.new({ 'name' => 'make_up' })
+tag1.save()
+tag2.save()
+tag3.save()
+tag4.save()
+tag5.save()
 
 transaction1 = Transaction.new({ 'merchant_name' => 'FirstBus', 'value' => 44, 'date' => 'October 2017', 'tag_id' => tag1.id })
 transaction2 = Transaction.new({ 'merchant_name' => 'Costa', 'value' => 2, 'date' => 'October 2017', 'tag_id' => tag2.id })
@@ -23,17 +34,6 @@ transaction3.save()
 transaction4.save()
 transaction5.save()
 transaction6.save()
-
-tag1 = Tag.new({ 'name' => 'transport' })
-tag2 = Tag.new({ 'name' => 'eating_out' })
-tag3 = Tag.new({ 'name' => 'clothes' })
-tag4 = Tag.new({ 'name' => 'groceries' })
-tag5 = Tag.new({ 'name' => 'make_up' })
-tag1.save()
-tag2.save()
-tag3.save()
-tag4.save()
-tag5.save()
 
 binding.pry
 nil
