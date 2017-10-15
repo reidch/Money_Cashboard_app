@@ -14,6 +14,23 @@ class Transaction
 		@tag_id = options['tag_id'].to_i
 	end
 
+	def save()
+    sql = "
+    INSERT INTO transactions (
+      tag_id,
+      merchant_name,
+      value,
+			date
+    )
+    VALUES
+    (
+      $1, $2, $3, $4
+    )
+    RETURNING id"
+    values = [@tag_id, @merchant_name, @value, @date]
+    @id = SqlRunner.run(sql, values)[0]['id'].to_i
+  end
+
 	def self.delete_all()
     sql = "DELETE FROM transactions"
     values = []

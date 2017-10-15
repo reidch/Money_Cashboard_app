@@ -1,5 +1,4 @@
-# require_relative('../db/sql_runner')
-# do I need this line if I'm not going to run this file in the db?
+require_relative('../db/sql_runner')
 
 class User
 
@@ -20,6 +19,25 @@ class User
      return @budget
   end
 
-# not put in a delete_all function as yet - required if not going in to db?
+	def save()
+    sql = "INSERT INTO users
+    (
+    name,
+		budget
+    )
+    VALUES
+    (
+    $1, $2
+    )
+    RETURNING id"
+    values = [@name, @budget]
+	  @id = SqlRunner.run(sql, values)[0]['id'].to_i
+  end
+
+	def self.delete_all()
+    sql = "DELETE FROM users"
+    values = []
+    SqlRunner.run(sql, values)
+  end
 
 end
