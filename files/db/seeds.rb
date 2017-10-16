@@ -28,12 +28,14 @@ transaction3 = Transaction.new({ 'merchant_name' => 'Shell', 'value' => 25, 'dat
 transaction4 = Transaction.new({ 'merchant_name' => 'Next', 'value' => 30, 'date' => 'November 2017', 'tag_id' => tag3.id })
 transaction5 = Transaction.new({ 'merchant_name' => 'Asda', 'value' => 35, 'date' => 'October 2017', 'tag_id' => tag4.id })
 transaction6 = Transaction.new({ 'merchant_name' => 'Frasers', 'value' => 20, 'date' => 'October 2017', 'tag_id' => tag5.id })
+transaction7 = Transaction.new({ 'merchant_name' => 'Morrisons', 'value' => 20, 'date' => 'November 2017', 'tag_id' => tag4.id })
 transaction1.save()
 transaction2.save()
 transaction3.save()
 transaction4.save()
 transaction5.save()
 transaction6.save()
+transaction7.save()
 
 binding.pry
 nil

@@ -11,8 +11,7 @@ class Tag
 	end
 
 	def save()
-    sql = "
-    INSERT INTO tags (
+    sql = "INSERT INTO tags (
       name
     )
     VALUES
@@ -34,6 +33,14 @@ class Tag
 		WHERE id = $2"
 		values = [@name, @id]
     SqlRunner.run(sql, values)
+	end
+
+	# it 'should return a total of all transactions with a specific tag', function()
+	def total_by_tag()
+		sql = "SELECT SUM(value) FROM transactions WHERE tag_id=$1;"
+		values = [@id]
+		transactions = SqlRunner.run(sql, values).first
+		return transactions['sum'].to_i
 	end
 
 	def self.delete_all()

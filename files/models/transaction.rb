@@ -15,8 +15,7 @@ class Transaction
 	end
 
 	def save()
-    sql = "
-    INSERT INTO transactions (
+    sql = "INSERT INTO transactions (
       tag_id,
       merchant_name,
       value,
@@ -61,6 +60,13 @@ class Transaction
      result = Transaction.new(transaction.first)
      return result
    end
+
+	 def self.total()
+		 sql = "SELECT SUM(value) FROM transactions;"
+		 values = []
+		 transactions = SqlRunner.run(sql, values).first
+		 return transactions['sum'].to_i
+	 end
 
 # DELETE function commented out so that the transaction is restored when seeds.rb is run again
 	# def delete()
