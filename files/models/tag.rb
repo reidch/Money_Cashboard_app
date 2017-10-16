@@ -44,11 +44,11 @@ class Tag
    end
 
 	# it 'should return a total of all transactions with a specific tag', function()
-	def total_by_tag()
+	def self.total_by_tag(id)
 		sql = "SELECT SUM(value) FROM transactions WHERE tag_id=$1;"
-		values = [@id]
+		values = [id]
 		transactions = SqlRunner.run(sql, values).first
-		return transactions['sum'].to_i
+		return transactions['sum']
 	end
 
 	def self.delete_all()
