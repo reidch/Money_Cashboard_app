@@ -1,0 +1,26 @@
+<div>
+  <form action="/transactions" method="POST">
+
+    <label for="merchantName">Merchant name:</label>
+    <input type="text" name="merchant_name" id="merchantName"/ >
+
+		<label for="value">Value £:</label>
+    <input type="number" min=0 max=999 name="value" id="vale"/ >
+
+    <label for="date">Date:</label>
+    <input type="text" name="date" id="date"/ >
+
+    <label for="tag_id"></label>
+    <select name="tag_id" id="tag">
+      <option disabled selected value>Select tag</option>
+      <% for tag in @tags %>
+      <option value="<%= tag.id %>">
+        <%= tag.name %>
+      </option>
+      <% end %>
+    </select>
+
+    <input type="save" value="save" id="btn-new-transaction">
+
+  </form>
+</div>

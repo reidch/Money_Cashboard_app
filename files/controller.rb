@@ -12,3 +12,13 @@ get '/transactions' do
 	@total = Transaction.total()
 	erb (:index)
 end
+
+get '/transactions/new' do
+	erb (:new)
+end
+
+post '/transactions' do
+  @transaction = Transaction.new(params)
+  @transaction.save()
+  erb( :create )
+end
