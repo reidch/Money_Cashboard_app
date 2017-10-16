@@ -35,6 +35,14 @@ class Tag
     SqlRunner.run(sql, values)
 	end
 
+	def self.all()
+     sql = "SELECT * FROM tags"
+     values = []
+     tags = SqlRunner.run(sql, values)
+     result = tags.map { |tag| Tag.new(tag) }
+     return result
+   end
+
 	# it 'should return a total of all transactions with a specific tag', function()
 	def total_by_tag()
 		sql = "SELECT SUM(value) FROM transactions WHERE tag_id=$1;"

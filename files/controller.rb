@@ -5,7 +5,7 @@ require('pry-byebug')
 # if any new ones created
 # require_relative('./models/user')
 require_relative('./models/transaction')
-# require_relative('./models/tag')
+require_relative('./models/tag')
 
 get '/transactions' do
 	@transactions = Transaction.all()
@@ -14,6 +14,7 @@ get '/transactions' do
 end
 
 get '/transactions/new' do
+	@tags = Tag.all()
 	erb (:new)
 end
 
