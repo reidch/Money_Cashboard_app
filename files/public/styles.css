@@ -1,0 +1,20 @@
+* {
+	font-family: 'Catamaran', sans-serif;
+}
+
+#btn-new-transaction {
+  background-color: ;
+  color: ;
+  border-radius: px;
+  border: 0;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: px;
+}
+
+.money{
+  background-image: url(money.jpg);
+  width: auto;
+  height: 200px;
+  background-position: center;
+}
