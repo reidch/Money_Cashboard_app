@@ -1,0 +1,11 @@
+<h1>All transactions:</h1>
+
+<% @transactions.each do |transaction| %>
+<article>
+<p>Merchant name: <%= transaction.merchant_name %></p>
+<p>Value: <%= transaction.value() %></p>
+<p>Date: <%= transaction.date() %></p>
+<p>Tag: <%= transaction.find_tag_name() %></p>
+</article>
+<%= print transaction %>
+<% end %>
