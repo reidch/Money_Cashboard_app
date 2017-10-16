@@ -4,7 +4,12 @@ require('pry-byebug')
 
 require_relative('../models/tag')
 
-get '/tags/:id' do
+get '/tags' do
+	@tags = Tag.all()
+	erb( :all_tags )
+end
+
+post '/tags/:id' do
 	@total = Tag.total_by_tag(params['id'].to_i)
 	p @total
 	erb( :tag )
