@@ -9,8 +9,8 @@ get '/tags' do
 	erb( :all_tags )
 end
 
-post '/tags/:id' do
-	@total = Tag.total_by_tag(params['id'].to_i)
+post '/tags' do
+	@total = Tag.total_by_tag(params['tag_id'].to_i)
 	p @total
 	erb( :tag )
 end
