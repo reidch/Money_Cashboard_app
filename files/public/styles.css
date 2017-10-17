@@ -53,13 +53,17 @@ a {
 }
 
 label {
-	font-size: 1.1em;
+	font-size: 1em;
+}
+
+input {
+	font-size: 0.85em;
 }
 
 select {
 	font-size: 0.9em;
 	color: rgba(29, 59, 81, 1);
-	background-color: rgba(214, 221, 214, 1);
+	background-color: rgba(209, 209, 198, 1);
 	font-family: 'Catamaran', sans-serif;
 }
 
@@ -73,4 +77,8 @@ table, th, td {
 
 th, td {
 	padding: 2px;
+}
+
+th {
+	background-color: rgba(137, 142, 140, 1);
 }
