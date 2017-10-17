@@ -11,6 +11,19 @@ body {
 	font-family: 'Catamaran', sans-serif;
 }
 
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+    display: block;
+    font-size: 1.7em;
+    -webkit-margin-before: -0.5em;
+    -webkit-margin-after: -0.35em;
+    font-weight: bold;
+}
+
 a {
 	color: rgba(29, 59, 81, 1);
 }
@@ -18,17 +31,33 @@ a {
 #frontpagelinks {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
 	align-items: center;
 	height: 80px;
 }
 
-#right {
+#btn-right {
 	width: 50%;
+  cursor: pointer;
 }
 
-#left {
+#btn-left {
 	width: 50%;
+  cursor: pointer;
+}
+
+button {
+  width: 150px;
+  height: 125px;
+  font-size: 1.5em;
+  line-height: 100%;
+  cursor: pointer;
+  color: rgba(29, 59, 81, 1);
+  background-color: rgba(255, 222, 106, 1);
+	font-family: 'Catamaran', sans-serif;
+}
+
+#home {
+  padding: 7.5px;
 }
 
 #previouspurchases {
