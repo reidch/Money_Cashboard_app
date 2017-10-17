@@ -10,12 +10,18 @@
 	<link href="https://fonts.googleapis.com/css?family=Catamaran:500,700" rel="stylesheet">
 </head>
 <body>
-<nav>
-	<p><a href="/home">Home</a></p>
-	<p><a href="/transactions/new">Add new purchase</a></p>
-	<p><a href="/transactions">All purchases</a></p>
-	<p><a href="/tags">View total spend by tag</a></p>
-</nav>
+	<nav>
+		<p><a href="/home">Home</a></p>
+		<p><a href="/transactions/new">Add new purchase</a></p>
+		<div id="previouspurchases">
+			<div id="all">
+				<p><a href="/transactions">All purchases</a></p>
+			</div>
+			<div id="by_tag">
+				<p><a href="/tags">View total spend by tag</a></p>
+			</div>
+		</div>
+	</nav>
 </body>
-  <%= yield %>
+<%= yield %>
 </html>
