@@ -1,19 +1,19 @@
-<h1>All purchases:</h1>
+<h1>All purchases</h1>
 <h3>Total amount spent: £<%=@total %></h3>
 
-<table>
-  <tr>
-    <th>Merchant name</th>
-    <th>Value £</th>
-    <th>Date</th>
-		<th>Tag</th>
-  </tr>
-  <% for transaction in @transactions %>
-  <tr>
-    <td><%= transaction.merchant_name %></td>
-    <td><%= transaction.value %></td>
-    <td><%= transaction.date %></td>
-		<td><%= transaction.find_tag_name %></td>
-  </tr>
-  <% end %>
-</table>
+  <table class="table1">
+    <tr>
+      <th>Merchant name</th>
+      <th>Value £</th>
+      <th>Date</th>
+      <th>Tag</th>
+    </tr>
+    <% for transaction in @transactions %>
+    <tr>
+      <td><%= transaction.merchant_name %></td>
+      <td><%= transaction.value %></td>
+      <td><%= transaction.date %></td>
+      <td><%= transaction.find_tag_name %></td>
+    </tr>
+    <% end %>
+  </table>
