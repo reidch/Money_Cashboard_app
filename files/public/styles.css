@@ -14,6 +14,8 @@ body {
 h1 {
   text-align: center;
   padding: 20px;
+  font-family: 'PT Serif', serif;
+  font-size: 2.5em;
 }
 
 h2 {
@@ -31,17 +33,18 @@ a {
 #frontpagelinks {
 	display: flex;
 	flex-direction: row;
+  justify-content: space-around;
 	align-items: center;
 	height: 80px;
 }
 
 #btn-right {
-	width: 50%;
+	width: 43%;
   cursor: pointer;
 }
 
 #btn-left {
-	width: 50%;
+	width: 40%;
   cursor: pointer;
 }
 
