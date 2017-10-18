@@ -11,11 +11,11 @@ class User
 		@budget = options['budget'].to_i
 	end
 
-	def user_name()
-     return "#{@name}"
+	def name()
+     return @name
   end
 
-	def user_budget()
+	def budget()
      return @budget
   end
 
