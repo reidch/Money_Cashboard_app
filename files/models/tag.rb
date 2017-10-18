@@ -23,18 +23,6 @@ class Tag
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
-	def update()
-		sql = "UPDATE tags SET
-		(
-			name
-		) = (
-			$1
-		)
-		WHERE id = $2"
-		values = [@name, @id]
-    SqlRunner.run(sql, values)
-	end
-
 	def self.all()
      sql = "SELECT * FROM tags"
      values = []
@@ -43,7 +31,6 @@ class Tag
      return result
    end
 
-	# it 'should return a total of all transactions with a specific tag', function()
 	def self.total_by_tag(id)
 		sql = "SELECT SUM(value) FROM transactions WHERE tag_id=$1;"
 		values = [id]

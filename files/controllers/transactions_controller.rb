@@ -16,26 +16,8 @@ get '/transactions/new' do
 	erb( :new )
 end
 
-# show and delete erb files 
-get '/transactions/:id' do
-	@transaction = Transaction.find(params['id'])
-	erb( :show )
-end
-
-post '/transactions/:id/delete' do
-	@transaction = Transaction.find(params['id'])
-	@transaction.delete()
-	erb( :delete )
-end
-
 post '/transactions' do
   @transaction = Transaction.new(params)
   @transaction.save()
   erb( :create )
 end
-
-# get '/transactions/:id/edit' do
-# 	@transaction = Transaction.find(params['id'])
-# 	@tags = Tags.all()
-# 	erb( :edit )
-# end
