@@ -31,12 +31,12 @@ class Transaction
   end
 
 	def self.all()
-     sql = "SELECT * FROM transactions"
-     values = []
-     transactions = SqlRunner.run(sql, values)
-     result = transactions.map { |transaction| Transaction.new(transaction) }
-     return result
-   end
+    sql = "SELECT * FROM transactions"
+    values = []
+    transactions = SqlRunner.run(sql, values)
+    result = transactions.map { |transaction| Transaction.new(transaction) }
+    return result
+  end
 
 	def find_tag_name()
 		sql = "SELECT tags.* FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE transactions.id = $1;"
@@ -45,19 +45,12 @@ class Transaction
 		return Tag.new(result).name
   end
 
-	 def self.total()
-		 sql = "SELECT SUM(value) FROM transactions;"
-		 values = []
-		 transactions = SqlRunner.run(sql, values).first
-		 return transactions['sum'].to_i
-	 end
-
-# DELETE function commented out so that the transaction is restored when seeds.rb is run again
-	# def delete()
-  #    sql = "DELETE FROM transactions WHERE id = $1"
-  #    values = [@id]
-  #    SqlRunner.run(sql, values)
-  #  end
+	def self.total()
+		sql = "SELECT SUM(value) FROM transactions;"
+		values = []
+		transactions = SqlRunner.run(sql, values).first
+		return transactions['sum'].to_i
+	end
 
 	def self.delete_all()
     sql = "DELETE FROM transactions"

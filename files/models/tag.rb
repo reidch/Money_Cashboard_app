@@ -24,11 +24,11 @@ class Tag
   end
 
 	def self.all()
-     sql = "SELECT * FROM tags"
-     values = []
-     tags = SqlRunner.run(sql, values)
-     result = tags.map { |tag| Tag.new(tag) }
-     return result
+    sql = "SELECT * FROM tags"
+    values = []
+    tags = SqlRunner.run(sql, values)
+    result = tags.map { |tag| Tag.new(tag) }
+    return result
    end
 
 	def self.total_by_tag(id)

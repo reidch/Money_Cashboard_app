@@ -12,11 +12,11 @@ class User
 	end
 
 	def name()
-     return @name
+    return @name
   end
 
 	def budget()
-     return @budget
+    return @budget
   end
 
 	def save()
