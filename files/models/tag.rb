@@ -31,9 +31,9 @@ class Tag
     return result
    end
 
-	def self.total_by_tag(id)
+	def total_by_tag()
 		sql = "SELECT SUM(value) FROM transactions WHERE tag_id=$1;"
-		values = [id]
+		values = [@id]
 		transactions = SqlRunner.run(sql, values).first
 		return transactions['sum']
 	end
@@ -43,5 +43,12 @@ class Tag
     values = []
     SqlRunner.run(sql, values)
   end
+
+	def self.find(tag_id)
+		sql = "SELECT * FROM tags WHERE id =$1;"
+		values = [tag_id]
+		tag = SqlRunner.run(sql, values).first
+		return Tag.new(tag)
+	end
 
 end

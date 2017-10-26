@@ -10,6 +10,6 @@ get '/tags' do
 end
 
 post '/tags' do
-	@total = Tag.total_by_tag(params['tag_id'].to_i)
-	erb( :tag )
+	@tag = Tag.find(params['tag_id'].to_i)
+	erb( :by_tag )
 end

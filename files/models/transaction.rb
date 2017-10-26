@@ -45,6 +45,13 @@ class Transaction
 		return Tag.new(result).name
   end
 
+	def tag()
+		sql = "SELECT tags.* FROM tags INNER JOIN transactions ON transactions.tag_id = tags.id WHERE transactions.id = $1;"
+		values =[@id]
+		result = SqlRunner.run(sql, values)[0]
+		return Tag.new(result)
+	end
+
 	def self.total()
 		sql = "SELECT SUM(value) FROM transactions;"
 		values = []

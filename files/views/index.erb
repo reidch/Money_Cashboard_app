@@ -13,7 +13,7 @@
       <td><%= transaction.merchant_name %></td>
       <td><%= transaction.value %></td>
       <td><%= transaction.date %></td>
-      <td><%= transaction.find_tag_name %></td>
+      <td><a href="/transactions/by_tag/<%= transaction.tag_id %>"><%= transaction.find_tag_name %></a></td>
     </tr>
     <% end %>
   </table>

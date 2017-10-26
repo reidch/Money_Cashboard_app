@@ -11,6 +11,11 @@ get '/transactions' do
 	erb( :index )
 end
 
+get '/transactions/by_tag/:tag_id' do
+	@tag = Tag.find(params['tag_id'].to_i)
+	erb( :by_tag )
+end
+
 get '/transactions/new' do
 	@tags = Tag.all()
 	erb( :new )
